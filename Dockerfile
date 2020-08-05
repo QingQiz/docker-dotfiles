@@ -22,10 +22,13 @@ RUN echo 'Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch' > /etc/pa
 COPY dotfiles $home/.dotfiles
 WORKDIR $home/.dotfiles
 
-COPY install_vim.py install_zsh.py ./
-RUN ./install_vim.py && ./install_zsh.py
+COPY install_vim.py .
+RUN ./install_vim.py
 
-COPY install_i3.py ./
+COPY install_zsh.py .
+RUN ./install_zsh.py
+
+COPY install_i3.py .
 RUN ./install_i3.py
 
 RUN chown $user:$user -R $home

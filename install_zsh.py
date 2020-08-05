@@ -32,8 +32,8 @@ os.chdir('.zsh')
 os.system('git clone https://github.com/zsh-users/zsh-autosuggestions.git')
 os.system('git clone https://github.com/sindresorhus/pure.git')
 
-os.symlink(f'{workdir}/.zsh/pure.zsh', 'zfunctions/pure')
-os.symlink(f'{workdir}/.zsh/async.zsh', 'zfunctions/async')
+os.symlink(f'{workdir}/.zsh/pure/pure.zsh', 'zfunctions/pure')
+os.symlink(f'{workdir}/.zsh/pure/async.zsh', 'zfunctions/async')
 
 # link config files
 linkHome('.oh-my-zsh', '.bashrc', '.zsh', '.zshrc', '.colorrc', '.scr')
