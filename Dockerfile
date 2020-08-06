@@ -7,17 +7,10 @@ ENV HTTP_PROXY "http://10.61.111.75:2340"
 ENV HTTPS_PROXY "http://10.61.111.75:2340"
 
 COPY zh_CN /usr/share/i18n/locales/
-COPY dotfiles $home/.dotfiles
-
-WORKDIR $home/.dotfiles
-COPY install_vim.py .
-COPY install_zsh.py .
-COPY install_i3.py  .
-
 SHELL ["/bin/bash", "-c"]
 
-RUN echo 'Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist && \
-    echo 'Server = http://mirrors.163.com/archlinux/$repo/os/$arch'   >> /etc/pacman.d/mirrorlist && \
+RUN echo 'Server = http://mirrors.163.com/archlinux/$repo/os/$arch'     > /etc/pacman.d/mirrorlist && \
+    echo 'Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch' >> /etc/pacman.d/mirrorlist && \
     echo -e "[archlinuxcn]\nSigLevel = Never\nServer = https://mirrors.aliyun.com/archlinuxcn/\$arch" >> /etc/pacman.conf && \
     echo 'zh_CN.UTF-8 UTF-8' >> /etc/locale.gen && locale-gen && \
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone && \
@@ -30,8 +23,16 @@ RUN echo 'Server = http://mirrors.aliyun.com/archlinux/$repo/os/$arch' > /etc/pa
     echo "$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 
+COPY dotfiles $home/.dotfiles
+WORKDIR $home/.dotfiles
+
+COPY install_vim.py .
 RUN ./install_vim.py
+
+COPY install_zsh.py .
 RUN ./install_zsh.py
+
+COPY install_i3.py  .
 RUN ./install_i3.py
 RUN chown $user:$user -R $home
 
