@@ -45,10 +45,10 @@ pkglist = [
     "pulsemixer",
     "ttf-dejavu",
     "nerd-fonts-dejavu-sans-mono",
-    "x11vnc",
     "xorg-server-xvfb",
     "emacs",
     "xorg-xrandr",
+    "tigervnc"
 ]
 
 cfghome = [
@@ -81,3 +81,14 @@ linkHome(*cfghome)
 linkConfig(*cfgcfg)
 
 os.system(f'git clone https://github.com/syl20bnr/spacemacs {homedir}/.emacs.d')
+
+os.system(f'mkdir -p {homedir}/.vnc')
+
+with open(f'{homedir}/.vnc/xstartup') as f:
+    print('#!/bin/sh', file=f)
+    print('unset SESSION_MANAGER',file=f)
+    print('unset DBUS_SESSION_BUS_ADDRESS',file=f)
+    print('export XKL_XMODMAP_DISABLE=1', file=f)
+    print('exec i3', file=f)
+
+os.system(f'chmod a+x {homedir}/.vnc/xstartup')
