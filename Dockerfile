@@ -47,4 +47,6 @@ RUN git clone https://github.com/powerline/fonts.git && \
     cd .. && \
     rm -rf fonts
 
-CMD /bin/zsh
+COPY vncstartup .
+
+CMD ./vncstartup :0 -geometry 1920x1080 -SecurityTypes None
