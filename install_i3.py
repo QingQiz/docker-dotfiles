@@ -84,7 +84,7 @@ os.system(f'git clone https://github.com/syl20bnr/spacemacs {homedir}/.emacs.d')
 
 os.system(f'mkdir -p {homedir}/.vnc')
 
-with open(f'{homedir}/.vnc/xstartup') as f:
+with open(f'{homedir}/.vnc/xstartup', 'w') as f:
     print('#!/bin/sh', file=f)
     print('unset SESSION_MANAGER',file=f)
     print('unset DBUS_SESSION_BUS_ADDRESS',file=f)
