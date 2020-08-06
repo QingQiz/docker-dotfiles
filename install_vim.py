@@ -8,13 +8,6 @@ workdir = os.path.abspath(__file__)
 workdir = os.path.dirname(workdir)
 homedir = os.path.dirname(workdir)
 
-proxy = 'http://10.61.111.75:2340'
-
-os.environ['http_proxy'] = proxy
-os.environ['HTTP_PROXY'] = proxy
-os.environ['https_proxy'] = proxy
-os.environ['HTTPS_PROXY'] = proxy
-
 plugins = [
     "tomasr/molokai",
     "tpope/vim-surround",
