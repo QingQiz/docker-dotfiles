@@ -46,7 +46,9 @@ pkglist = [
     "ttf-dejavu",
     "nerd-fonts-dejavu-sans-mono",
     "x11vnc",
-    "xorg-server-xvfb"
+    "xorg-server-xvfb",
+    "emacs",
+    "xorg-xrandr",
 ]
 
 cfghome = [
@@ -61,7 +63,8 @@ cfghome = [
     ".Xresources.d",
     ".tmux.conf",
     ".colorrc",
-    ".conky"
+    ".conky",
+    ".spacemacs"
 ]
 
 cfgcfg = [
@@ -76,3 +79,5 @@ cfgcfg = [
 install (*pkglist)
 linkHome(*cfghome)
 linkConfig(*cfgcfg)
+
+os.system(f'git clone https://github.com/syl20bnr/spacemacs {homedir}/.emacs.d')

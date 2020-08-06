@@ -22,7 +22,7 @@ def linkHome(*args):
 
 # install zsh and change default shell to zsh
 install('zsh', 'zsh-syntax-highlighting', 'thefuck')
-os.system('sudo -u angel -- chsh -s /bin/zsh')
+os.system('chsh -s /bin/zsh angel')
 
 # install oh-my-zsh
 os.chdir(workdir)
