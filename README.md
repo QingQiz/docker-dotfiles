@@ -21,7 +21,7 @@ docker pull sofeeys/archlinux-i3wm
 server
 
 ```shell
-docker run -itd --name i3 -p 5900:5900 -v ~:/home/angel/workspace/host:rw sofeeys/archlinux-i3wm ./vncstartup :0 -geometry 1920x1080 -SecurityTypes None
+docker run -itd --name i3 -p 5900:5900 -v ~:/home/angel/workspace/host:rw sofeeys/archlinux-i3wm
 ```
 
 client
