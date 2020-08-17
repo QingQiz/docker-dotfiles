@@ -29,7 +29,7 @@ pkglist = [
     "xorg-server",
     "xorg-xinit",
     "i3-gaps",
-    "compton",
+    "xcompmgr",
     "polybar",
     "rofi",
     "termite",
@@ -92,3 +92,8 @@ with open(f'{homedir}/.vnc/xstartup', 'w') as f:
     print('exec i3', file=f)
 
 os.system(f'chmod a+x {homedir}/.vnc/xstartup')
+
+## fix polybar and transparency
+with open(f'{homedir}/.config/i3/config', 'a') as f:
+    print('exec_always xcompmgr &')
+    print('exec_always $HOME/.scr/__launch_polybar')
