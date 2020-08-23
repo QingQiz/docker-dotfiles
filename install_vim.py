@@ -27,6 +27,7 @@ plugins = [
     "tenfyzhong/CompleteParameter.vim",
     "jeaye/color_coded",
     "Valloric/YouCompleteMe",
+    "itchyny/vim-haskell-indent",
 ]
 
 # install vim
