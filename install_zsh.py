@@ -37,5 +37,5 @@ os.symlink(f'{workdir}/.zsh/pure/async.zsh', 'zfunctions/async')
 
 # link config files
 linkHome('.oh-my-zsh', '.bashrc', '.zsh', '.zshrc', '.colorrc', '.scr')
-os.system(f'mkdir -p {homedir}/.python')
-os.system(f'ln -sf {workdir}/.python {homedir}/.python/QingQiz')
+os.chdir(f'{workdir}/.python')
+os.system('pip install .')

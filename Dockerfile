@@ -17,7 +17,7 @@ RUN echo -e "[archlinuxcn]\nSigLevel = Never\nServer = https://repo.archlinuxcn.
     ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo "Asia/Shanghai" > /etc/timezone && \
     pacman -Syy && \
     pacman -Syu --noconfirm && \
-    pacman -S --noconfirm sudo git make cmake gcc clang python3 psmisc iproute2 && \
+    pacman -S --noconfirm sudo git make cmake gcc clang python3 python-pip psmisc iproute2 && \
     useradd -ms /bin/bash $user && \
     mkdir -p $home/.config && mkdir -p $home/.local/share && \
     echo "$user ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers && \
