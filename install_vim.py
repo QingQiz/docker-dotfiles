@@ -18,22 +18,22 @@ os.chdir(f'{workdir}/.vim/vimfiles')
 os.system('pacman -S --noconfirm vim-ultisnips')
 
 # build jeaye/color_coded
-os.chdir(f'{workdir}/.vim/vimfiles')
-
-os.system('pacman -S --noconfirm lua52 lua')
-os.symlink('/usr/lib/libtinfo.so.6', '/usr/lib/libtinfo.so.5')
-
-os.remove (f'{workdir}/.vim/vimfiles/color_coded/after/syntax/color_coded.vim')
-os.symlink(f'{workdir}/.vim/syntax/color_coded.vim',
-           f'{workdir}/.vim/vimfiles/color_coded/after/syntax/color_coded.vim')
-os.symlink(f'{workdir}/.config/color_coded',
-           f'{homedir}/.config/color_coded')
+#os.chdir(f'{workdir}/.vim/vimfiles')
+#
+#os.system('pacman -S --noconfirm lua52 lua')
+#os.symlink('/usr/lib/libtinfo.so.6', '/usr/lib/libtinfo.so.5')
+#
+#os.remove (f'{workdir}/.vim/vimfiles/color_coded/after/syntax/color_coded.vim')
+#os.symlink(f'{workdir}/.vim/syntax/color_coded.vim',
+#           f'{workdir}/.vim/vimfiles/color_coded/after/syntax/color_coded.vim')
+#os.symlink(f'{workdir}/.config/color_coded',
+#           f'{homedir}/.config/color_coded')
 
 # build Valloric/YouCompleteMe
-os.chdir(f'{workdir}/.vim/vimfiles/YouCompleteMe')
-
-os.symlink(f'{workdir}/.config/ycmd',
-           f'{homedir}/.config/ycmd')
+#os.chdir(f'{workdir}/.vim/vimfiles/YouCompleteMe')
+#
+#os.symlink(f'{workdir}/.config/ycmd',
+#           f'{homedir}/.config/ycmd')
 
 # link config files
 os.symlink(f'{workdir}/.vim', f'{homedir}/.vim')
