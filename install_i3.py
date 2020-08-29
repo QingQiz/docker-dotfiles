@@ -46,7 +46,7 @@ pkglist = [
     "ttf-dejavu",
     "nerd-fonts-dejavu-sans-mono",
     "xorg-server-xvfb",
-    "emacs",
+    # "emacs",
     "xorg-xrandr",
     "tigervnc"
 ]
@@ -64,7 +64,7 @@ cfghome = [
     ".tmux.conf",
     ".colorrc",
     ".conky",
-    ".spacemacs"
+    # ".spacemacs"
 ]
 
 cfgcfg = [
@@ -80,7 +80,7 @@ install (*pkglist)
 linkHome(*cfghome)
 linkConfig(*cfgcfg)
 
-os.system(f'git clone https://github.com/syl20bnr/spacemacs {homedir}/.emacs.d')
+# os.system(f'git clone https://github.com/syl20bnr/spacemacs {homedir}/.emacs.d')
 
 os.system(f'mkdir -p {homedir}/.vnc')
 
