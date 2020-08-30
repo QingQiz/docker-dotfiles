@@ -40,6 +40,7 @@ pkglist = [
     "powerline-fonts",
     "noto-fonts",
     "noto-fonts-cjk",
+    "nerd-fonts-dejavu-sans-mono",
     "noto-fonts-emoji",
     "numlockx",
     "pulsemixer",
